@@ -4,7 +4,10 @@ const Character = (props) => {
 
     return ( 
         <>
-        <td></td>
+        <td>{character.id}</td>
+        <td>{character.sourceUrl}</td>
+        <td>{character.name}</td>
+        <td><img src={character.imageUrl}></img></td>
         </>
      );
 };
