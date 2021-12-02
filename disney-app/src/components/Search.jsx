@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
 
-const Search = () => {
+const Search = ({ setResults }) => {
 
     const [searchTerm, setSearchTerm] = useState("");
-    const [searchResults, setSearchResults] = useState([])
 
     const search = () => {
         axios.get(`https://api.disneyapi.dev/characters`).then((response) => {
@@ -13,12 +12,11 @@ const Search = () => {
             const characters = response.data.data
             const filteredCharacters = characters.filter((character) => { return character.name.includes(searchTerm) })
             console.log(filteredCharacters);
-            setSearchResults(filteredCharacters);
+            setResults(filteredCharacters);
 
         })
     }
 
-    useEffect((searchResults) => { console.log(searchResults); }, [])
 
 
 
