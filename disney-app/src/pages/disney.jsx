@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Spinner, Card, CardGroup, CardBody, CardImg, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
-import Character from "./character";
+import { Spinner, Card, CardBody, CardImg, CardTitle } from "reactstrap";
 
 const Disney = () => {
   const [data, setData] = useState([]);
