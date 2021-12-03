@@ -37,12 +37,12 @@ const Disney = () => {
           let i = 0;
 
           while (newData.length > 0) {
-            if (newData.length > 20) {
-              paginatedArray[i] = newData.slice(0, 20);
+            if (newData.length > 16) {
+              paginatedArray[i] = newData.slice(0, 16);
 
               console.log(newData)
               i++
-              newData.splice(0, 20);
+              newData.splice(0, 16);
             } else {
               paginatedArray[paginatedArray.length] = newData;
               newData = [];
@@ -98,7 +98,7 @@ const Disney = () => {
         );
       }
 
-    } else if (paginatedState[page - 1].length > 19) {
+    } else if (paginatedState[page - 1].length > 15) {
       pageButtonsF = () => {
         return (
           <div>
@@ -162,7 +162,7 @@ const Disney = () => {
     return (
       <div>
 
-      <NavigationBar />
+        <NavigationBar />
         <p>Page: {page}</p>
 
         <CardGroup>
