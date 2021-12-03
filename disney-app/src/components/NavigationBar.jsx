@@ -17,13 +17,13 @@ const NavigationBar = () => {
 
         <Nav className="me-auto" navbar>
           <NavItem>
-            <NavLink href="/home">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/character">Characters</NavLink>
+            <NavLink href="/characters">Characters</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/SearchPage">Search for Characters</NavLink>
+            <NavLink href="/searchCharacters">Search for Characters</NavLink>
           </NavItem>
         </Nav>
         {/* add sean's search thing here */}

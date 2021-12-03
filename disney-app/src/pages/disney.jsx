@@ -8,6 +8,8 @@ import {
   CardTitle,
   CardGroup,
 } from "reactstrap";
+import NavigationBar from "../components/NavigationBar";
+import "../CSS/home.css";
 
 const Disney = () => {
   const [data, setData] = useState([]);
@@ -159,7 +161,10 @@ const Disney = () => {
 
     return (
       <div>
-        <p>{page}</p>
+
+      <NavigationBar />
+        <p>Page: {page}</p>
+
         <CardGroup>
           <>{card}</>
         </CardGroup>
