@@ -2,6 +2,7 @@ import { useState } from "react";
 import Search from "../components/Search";
 import { Card, CardBody, CardImg, CardTitle, CardGroup } from "reactstrap";
 import NavigationBar from "../components/NavigationBar";
+import "../CSS/home.css";
 
 const SearchPage = () => {
   const [results, setResults] = useState([]);

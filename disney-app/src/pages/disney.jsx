@@ -9,6 +9,7 @@ import {
   CardGroup,
 } from "reactstrap";
 import NavigationBar from "../components/NavigationBar";
+import "../CSS/home.css";
 
 const Disney = () => {
   const [data, setData] = useState([]);
