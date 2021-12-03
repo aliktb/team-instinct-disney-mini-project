@@ -1,8 +1,14 @@
 import "./CSS/App.css";
-import Character from "./pages/character";
+import Disney from "./pages/disney";
 
 function App() {
-  return <Character />;
+  return (
+    <div>
+      <Disney/>
+
+    </div>
+
+  );
 }
 
 export default App;
