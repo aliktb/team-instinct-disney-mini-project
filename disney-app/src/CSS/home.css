@@ -10,14 +10,14 @@ body {
     text-align: center;
 }
 
-.background-color{
+/* .background-color {
     background-color: rgb(51, 125, 195);
-}
+} */
 
 
 #navbar {
     overflow: hidden;
-    background-color: rgba(211, 178, 178,0);
+    background-color: rgba(211, 178, 178, 0);
 }
 
 /*
@@ -90,14 +90,14 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    /* background-size: cover; */
 
 
 }
 
-.para {
+/* .para {
     height: 100%;
     background-color: rgb(12, 89, 204);
     font-size: 36px;
     text-align: center;
-}
+} */

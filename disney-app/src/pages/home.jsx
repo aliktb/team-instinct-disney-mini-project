@@ -11,12 +11,11 @@ function Home() {
         <div class="parallax"></div>
       </header>
 
-      <div class="para">
-        <h5>the header</h5>
-        <h2>Team instinct Babyyyyyyyy</h2>
-      </div>
+      <h2>Team instinct Babyyyyyyyy</h2>
+
     </div>
   );
 }
+
 
 export default Home;
