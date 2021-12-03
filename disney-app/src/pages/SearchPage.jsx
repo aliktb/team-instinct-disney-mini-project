@@ -44,6 +44,7 @@ const SearchPage = () => {
 
     return (
       <div>
+        <NavigationBar />
         <Search setResults={setResults} />
         <div>
           <CardGroup>
