@@ -1,6 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Spinner, Card, CardBody, CardImg, CardTitle } from "reactstrap";
+import {
+  Spinner,
+  Card,
+  CardBody,
+  CardImg,
+  CardTitle,
+  CardGroup,
+} from "reactstrap";
 
 const Disney = () => {
   const [data, setData] = useState([]);
@@ -22,7 +29,7 @@ const Disney = () => {
           setError(error);
           setIsLoaded(true);
         });
-    }, 5000);
+    }, 100);
   }, []);
 
   if (error) {
@@ -31,32 +38,54 @@ const Disney = () => {
     return (
       <div>
         <p>Loading data...</p>
-        <Spinner type="grow" colour="primary" />
+        <Spinner colour="primary" />
       </div>
     );
   } else {
     console.log(data);
     const card = data.map((char) => {
-    console.log(char.imageUrl);
-      return (
+      // console.log(char.imageUrl);
 
-  <Card>
-    <CardImg
-      alt="Card image cap"
-      src={char.imageUrl}
-      top
-      width="100%"
-    />
-    <CardBody>
-      <CardTitle tag="h5">
-        {char.name}
-      </CardTitle>
-    </CardBody>
-  </Card>
+      let picUrl = char.imageUrl;
+
+      if (picUrl.indexOf(".png") !== -1) {
+        picUrl = picUrl.substring(0, picUrl.indexOf(".png"));
+        picUrl = picUrl + ".png";
+        console.log(picUrl);
+      }
+      if (picUrl.indexOf(".PNG") !== -1) {
+        picUrl = picUrl.substring(0, picUrl.indexOf(".PNG"));
+        picUrl = picUrl + ".PNG";
+        console.log(picUrl);
+      } else if (picUrl.indexOf(".jpg") !== -1) {
+        picUrl = picUrl.substring(0, picUrl.indexOf(".jpg"));
+        picUrl = picUrl + ".jpg";
+        console.log(picUrl);
+      } else if (picUrl.indexOf(".jpeg") !== -1) {
+        picUrl = picUrl.substring(0, picUrl.indexOf(".jpeg"));
+        picUrl = picUrl + ".jpeg";
+        console.log(picUrl);
+      }
+
+      return (
+        <span>
+          <Card style={{ maxWidth: "20rem", height: "25rem" }} className="m-2">
+            <CardImg alt={char.name} src={picUrl} top width="100%" />
+            <CardBody>
+              <CardTitle tag="h5">{char.name}</CardTitle>
+            </CardBody>
+          </Card>
+        </span>
       );
     });
 
-    return <div>{card}</div>;
+    return (
+      <div>
+        <CardGroup>
+          <>{card}</>
+        </CardGroup>
+      </div>
+    );
   }
 };
 
