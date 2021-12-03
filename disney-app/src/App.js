@@ -3,6 +3,7 @@ import Disney from "./pages/disney";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SearchPage from "./pages/SearchPage";
 import Home from "./pages/home";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" exact element={<Home />}></Route>
           <Route path="/characters" element={<Disney />}></Route>
           <Route path="/searchCharacters" element={<SearchPage />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </Router>
     </div>
