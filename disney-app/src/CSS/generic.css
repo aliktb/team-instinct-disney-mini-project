@@ -1,0 +1,8 @@
+body {
+    height: 1000px;
+    background: linear-gradient(to bottom, #27a5cf 0%, #ff99cc 100%);
+}
+
+#mike img {
+    background: transparent;
+}

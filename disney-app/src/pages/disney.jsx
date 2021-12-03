@@ -20,28 +20,26 @@ const Disney = () => {
 
   const [page, setPage] = useState(1);
 
-  const [paginatedState, setPS] = useState([])
+  const [paginatedState, setPS] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
       axios
         .get("http://api.disneyapi.dev/characters")
         .then((response) => {
-
-
           setData(response.data.data);
 
           let newData = response.data.data;
           console.log(newData);
-          let paginatedArray = []
+          let paginatedArray = [];
           let i = 0;
 
           while (newData.length > 0) {
             if (newData.length > 16) {
               paginatedArray[i] = newData.slice(0, 16);
 
-              console.log(newData)
-              i++
+              console.log(newData);
+              i++;
               newData.splice(0, 16);
             } else {
               paginatedArray[paginatedArray.length] = newData;
@@ -49,7 +47,6 @@ const Disney = () => {
             }
             console.log(paginatedArray);
             setPS(paginatedArray);
-
           }
           setIsLoaded(true);
         })
@@ -72,56 +69,55 @@ const Disney = () => {
   } else {
     console.log(data);
 
-
-
-
-
-
     const increasePage = () => {
-      setPage(page + 1)
-    }
+      setPage(page + 1);
+    };
 
     const decreasePage = () => {
-      setPage(page - 1)
-    }
+      setPage(page - 1);
+    };
 
-
-    let pageButtonsF = () => { }
-
+    let pageButtonsF = () => {};
 
     if (page === 1) {
       pageButtonsF = () => {
         return (
           <div>
-            <button type='button' onClick={increasePage}>+1</button>
+            <button type="button" onClick={increasePage}>
+              +1
+            </button>
           </div>
         );
-      }
-
+      };
     } else if (paginatedState[page - 1].length > 15) {
       pageButtonsF = () => {
         return (
           <div>
-            <button type='button' onClick={decreasePage}>-1</button>
-            <button type='button' onClick={increasePage}>+1</button>
+            <button type="button" onClick={decreasePage}>
+              -1
+            </button>
+            <button type="button" onClick={increasePage}>
+              +1
+            </button>
           </div>
         );
-      }
+      };
     } else {
       pageButtonsF = () => {
         return (
           <div>
-            <button type='button' onClick={decreasePage}>-1</button>
+            <button type="button" onClick={decreasePage}>
+              -1
+            </button>
           </div>
         );
-      }
+      };
     }
 
     const pageButtons = pageButtonsF();
 
-    console.log(paginatedState)
-    console.log(paginatedState[0])
-
+    console.log(paginatedState);
+    console.log(paginatedState[0]);
 
     const card = paginatedState[page - 1].map((char) => {
       // console.log(char.imageUrl);
@@ -161,16 +157,13 @@ const Disney = () => {
 
     return (
       <div>
-
         <NavigationBar />
         <p>Page: {page}</p>
 
         <CardGroup>
           <>{card}</>
         </CardGroup>
-        <>
-          {pageButtons}
-        </>
+        <>{pageButtons}</>
       </div>
     );
   }

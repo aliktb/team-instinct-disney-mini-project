@@ -3,6 +3,7 @@ import Search from "../components/Search";
 import { Card, CardBody, CardImg, CardTitle, CardGroup } from "reactstrap";
 import NavigationBar from "../components/NavigationBar";
 import "../CSS/home.css";
+import "../CSS/generic.css";
 
 const SearchPage = () => {
   const [results, setResults] = useState([]);
