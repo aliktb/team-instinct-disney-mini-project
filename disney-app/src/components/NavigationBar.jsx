@@ -22,6 +22,9 @@ const NavigationBar = () => {
           <NavItem>
             <NavLink href="/character">Characters</NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink href="/SearchPage">Search for Characters</NavLink>
+          </NavItem>
         </Nav>
         {/* add sean's search thing here */}
       </Navbar>
