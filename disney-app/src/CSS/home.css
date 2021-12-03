@@ -10,13 +10,17 @@ body {
     text-align: center;
 }
 
+.background-color{
+    background-color: rgb(51, 125, 195);
+}
 
 
 #navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: rgba(211, 178, 178,0);
 }
 
+/*
 #navbar a {
     float: left;
     display: block;
@@ -35,7 +39,7 @@ body {
 #navbar a.active {
     background-color: blue;
     color: white;
-}
+} */
 
 .content {
     padding: 16px;
